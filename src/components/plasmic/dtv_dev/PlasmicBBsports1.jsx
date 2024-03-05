@@ -213,7 +213,7 @@ function PlasmicBBsports1__RenderFunc(props) {
                       return (
                         "Before you go " +
                         $state.loggedInUser.name +
-                        " ,check out these offers."
+                        " , hello."
                       );
                     } catch (e) {
                       if (
