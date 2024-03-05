@@ -71,18 +71,7 @@ function Index() {
         <h1 style={{ margin: 0 }}>
           Welcome to Plasmic!
         </h1>
-        <h4>
-          <a
-            style={{ color: "blue" }}
-            href="https://www.plasmic.app/learn/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Plasmic
-          </a>
-        </h4>
-        
-        <p><i>Note: Remember to remove this file if you introduce a Page component at the &#39;/&#39; path.</i></p>
+        <h4> Hello world!</h4>
       </header>
     </div>
   );
