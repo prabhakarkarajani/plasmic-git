@@ -519,6 +519,7 @@ function withUsePlasmicAuth(WrappedComponent) {
         }}
       >
         <WrappedComponent {...props} />
+        <h1> Hello BBsports1</h1>
       </PlasmicDataSourceContextProvider__>
     );
   };
