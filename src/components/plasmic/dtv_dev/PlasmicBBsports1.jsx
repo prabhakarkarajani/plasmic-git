@@ -213,7 +213,7 @@ function PlasmicBBsports1__RenderFunc(props) {
                       return (
                         "Before you go " +
                         $state.loggedInUser.name +
-                        " , hello."
+                        " ,check out these offers."
                       );
                     } catch (e) {
                       if (
@@ -292,16 +292,28 @@ function PlasmicBBsports1__RenderFunc(props) {
                   <DataFetcher
                     data-plasmic-name={"httpRestApiFetcher"}
                     data-plasmic-override={overrides.httpRestApiFetcher}
-                    body={{
-                      GetProductsListRequestMessage: {
-                        apiUser: "popsical@yopmail.com",
-                        apiPassword: "Password1@",
-                        channelPartnerID: "POPSICAL",
-                        prodAreaCode: "001",
-                        returnAttributes: "T",
-                        returnAppChannels: "T"
+                    body={(() => {
+                      try {
+                        return undefined;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return {
+                            GetProductsListRequestMessage: {
+                              apiUser: "popsical@yopmail.com",
+                              apiPassword: "Password1@",
+                              channelPartnerID: "POPSICAL",
+                              prodAreaCode: "001",
+                              returnAttributes: "T",
+                              returnAppChannels: "T"
+                            }
+                          };
+                        }
+                        throw e;
                       }
-                    }}
+                    })()}
                     className={classNames(
                       "__wab_instance",
                       sty.httpRestApiFetcher
@@ -332,7 +344,7 @@ function PlasmicBBsports1__RenderFunc(props) {
                           )}
                           onClick={async event => {
                             const $steps = {};
-                            $steps["updateLoggedInUser2"] = false
+                            $steps["updateLoggedInUser2"] = true
                               ? (() => {
                                   const actionArgs = {
                                     destination: `/new-page-2`
@@ -519,7 +531,6 @@ function withUsePlasmicAuth(WrappedComponent) {
         }}
       >
         <WrappedComponent {...props} />
-        <h1> Hello Plasmic </h1>
       </PlasmicDataSourceContextProvider__>
     );
   };
