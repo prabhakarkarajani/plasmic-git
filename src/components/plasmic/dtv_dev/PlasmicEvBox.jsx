@@ -389,6 +389,29 @@ function PlasmicEvBox__RenderFunc(props) {
                   </React.Fragment>
                 </div>
               </AntdButton>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__jsaPd
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.input, $state.passwordInput;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__w4QcK)}>
               <a

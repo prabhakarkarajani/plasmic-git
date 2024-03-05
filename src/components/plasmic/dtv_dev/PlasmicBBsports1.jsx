@@ -318,7 +318,19 @@ function PlasmicBBsports1__RenderFunc(props) {
                       "__wab_instance",
                       sty.httpRestApiFetcher
                     )}
-                    dataName={"fetchedData"}
+                    dataName={(() => {
+                      try {
+                        return undefined;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "fetchedData";
+                        }
+                        throw e;
+                      }
+                    })()}
                     errorDisplay={
                       <DataCtxReader__>
                         {$ctx => "Error fetching data"}
