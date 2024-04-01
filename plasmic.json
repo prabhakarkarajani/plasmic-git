@@ -895,6 +895,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/new-page-5"
+        },
+        {
+          "id": "_qA7UAc8SxS9",
+          "name": "Ecommerce",
+          "type": "managed",
+          "projectId": "sMuK5QvKwWGrkw9DYJKXqS",
+          "renderModuleFilePath": "plasmic/dtv_dev/PlasmicEcommerce.jsx",
+          "importSpec": {
+            "modulePath": "Ecommerce.jsx"
+          },
+          "cssFilePath": "plasmic/dtv_dev/PlasmicEcommerce.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/ecommerce"
         }
       ],
       "icons": [

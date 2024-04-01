@@ -70,6 +70,12 @@ function PlasmicEvBox__RenderFunc(props) {
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
         onMutate: generateOnMutateForSpec("value", AntdPassword_Helpers)
+      },
+      {
+        path: "signin",
+        type: "private",
+        variableType: "object",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ({})
       }
     ],
 
@@ -351,10 +357,15 @@ function PlasmicEvBox__RenderFunc(props) {
                     ? (() => {
                         const actionArgs = {
                           customFunction: async () => {
-                            return console.log(
-                              $state.input,
-                              $state.passwordInput
-                            );
+                            return (() => {
+                              $state.signin = {
+                                input: $state.input.value,
+                                passwordInput: $state.passwordInput.value
+                              };
+                              return console.log(
+                                JSON.parse(JSON.stringify($state.signin))
+                              );
+                            })();
                           }
                         };
                         return (({ customFunction }) => {
@@ -389,6 +400,52 @@ function PlasmicEvBox__RenderFunc(props) {
                   </React.Fragment>
                 </div>
               </AntdButton>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__bqQ3
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.signin.input;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dlSbu
+                )}
+              >
+                <React.Fragment>
+                  {(() => {
+                    try {
+                      return $state.signin.passwordInput;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return "";
+                      }
+                      throw e;
+                    }
+                  })()}
+                </React.Fragment>
+              </div>
             </div>
             <div className={classNames(projectcss.all, sty.freeBox__w4QcK)}>
               <a

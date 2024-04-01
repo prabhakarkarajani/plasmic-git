@@ -292,28 +292,16 @@ function PlasmicBBsports1__RenderFunc(props) {
                   <DataFetcher
                     data-plasmic-name={"httpRestApiFetcher"}
                     data-plasmic-override={overrides.httpRestApiFetcher}
-                    body={(() => {
-                      try {
-                        return undefined;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return {
-                            GetProductsListRequestMessage: {
-                              apiUser: "popsical@yopmail.com",
-                              apiPassword: "Password1@",
-                              channelPartnerID: "POPSICAL",
-                              prodAreaCode: "001",
-                              returnAttributes: "T",
-                              returnAppChannels: "T"
-                            }
-                          };
-                        }
-                        throw e;
+                    body={{
+                      GetProductsListRequestMessage: {
+                        apiUser: "popsical@yopmail.com",
+                        apiPassword: "Password1@",
+                        channelPartnerID: "POPSICAL",
+                        prodAreaCode: "001",
+                        returnAttributes: "T",
+                        returnAppChannels: "T"
                       }
-                    })()}
+                    }}
                     className={classNames(
                       "__wab_instance",
                       sty.httpRestApiFetcher

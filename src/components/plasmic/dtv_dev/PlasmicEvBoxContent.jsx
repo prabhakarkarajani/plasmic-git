@@ -62,7 +62,11 @@ function PlasmicEvBoxContent__RenderFunc(props) {
             sty.root
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox__lBaH6)}>
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
             <div
               data-plasmic-name={"text"}
               data-plasmic-override={overrides.text}
@@ -94,20 +98,6 @@ function PlasmicEvBoxContent__RenderFunc(props) {
               </React.Fragment>
             </div>
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__cDsJp)}>
-            <h2
-              data-plasmic-name={"h2"}
-              data-plasmic-override={overrides.h2}
-              className={classNames(
-                projectcss.all,
-                projectcss.h2,
-                projectcss.__wab_text,
-                sty.h2
-              )}
-            >
-              {"Page Title"}
-            </h2>
-          </div>
         </div>
       </div>
     </React.Fragment>
@@ -115,10 +105,10 @@ function PlasmicEvBoxContent__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "text", "span", "h2"],
+  root: ["root", "freeBox", "text", "span"],
+  freeBox: ["freeBox", "text", "span"],
   text: ["text", "span"],
-  span: ["span"],
-  h2: ["h2"]
+  span: ["span"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -190,9 +180,9 @@ export const PlasmicEvBoxContent = Object.assign(
   withUsePlasmicAuth(withPlasmicPageGuard(makeNodeComponent("root"))),
   {
     // Helper components rendering sub-elements
+    freeBox: makeNodeComponent("freeBox"),
     text: makeNodeComponent("text"),
     span: makeNodeComponent("span"),
-    h2: makeNodeComponent("h2"),
     // Metadata about props expected for PlasmicEvBoxContent
     internalVariantProps: PlasmicEvBoxContent__VariantProps,
     internalArgProps: PlasmicEvBoxContent__ArgProps,

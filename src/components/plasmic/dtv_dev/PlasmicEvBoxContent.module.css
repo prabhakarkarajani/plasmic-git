@@ -21,7 +21,7 @@
 .root > * {
   grid-column: 4;
 }
-.freeBox__lBaH6 {
+.freeBox {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -48,25 +48,4 @@
 }
 .span {
   color: #ff4141;
-}
-.freeBox__cDsJp {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  grid-column-start: 3 !important;
-  grid-column-end: -3 !important;
-  padding: 8px;
-}
-.h2 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  text-align: center;
-  min-width: 0;
 }
