@@ -909,6 +909,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/ecommerce"
+        },
+        {
+          "id": "THAZfZJc3WJf",
+          "name": "NewPage2",
+          "type": "managed",
+          "projectId": "sMuK5QvKwWGrkw9DYJKXqS",
+          "renderModuleFilePath": "plasmic/dtv_dev/PlasmicNewPage2.jsx",
+          "importSpec": {
+            "modulePath": "NewPage2.jsx"
+          },
+          "cssFilePath": "plasmic/dtv_dev/PlasmicNewPage2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/new-page-6"
+        },
+        {
+          "id": "LfkSQr06H7hh",
+          "name": "Skullcandy",
+          "type": "managed",
+          "projectId": "sMuK5QvKwWGrkw9DYJKXqS",
+          "renderModuleFilePath": "plasmic/dtv_dev/PlasmicSkullcandy.jsx",
+          "importSpec": {
+            "modulePath": "Skullcandy.jsx"
+          },
+          "cssFilePath": "plasmic/dtv_dev/PlasmicSkullcandy.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/skullcandy"
         }
       ],
       "icons": [
