@@ -21,9 +21,10 @@ import {
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import * as plasmicAuth from "@plasmicapp/react-web/lib/auth";
 import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
-import { NavigationBar } from "@plasmicpkgs/plasmic-nav";
+import { RichLayout } from "@plasmicpkgs/plasmic-rich-components/skinny/rich-layout";
 import "@plasmicapp/react-web/lib/plasmic.css";
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
+import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: sMuK5QvKwWGrkw9DYJKXqS/projectcss
 import sty from "./PlasmicSkullcandy.module.css"; // plasmic-import: LfkSQr06H7hh/css
 
@@ -46,7 +47,6 @@ function PlasmicSkullcandy__RenderFunc(props) {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
   const currentUser = useCurrentUser?.() || {};
-  const dataSourcesCtx = usePlasmicDataSourceContext();
   return (
     <React.Fragment>
       <div className={projectcss.plasmic_page_wrapper}>
@@ -62,100 +62,57 @@ function PlasmicSkullcandy__RenderFunc(props) {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             plasmic_antd_5_hostless_css.plasmic_tokens,
+            plasmic_plasmic_rich_components_css.plasmic_tokens,
             sty.landingPage
           )}
         >
-          <NavigationBar
-            data-plasmic-name={"headerNavBar"}
-            data-plasmic-override={overrides.headerNavBar}
-            brand={
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  sty.link___5CvK
-                )}
-                href={"#"}
-              >
-                <PlasmicImg__
-                  alt={""}
-                  className={classNames(sty.img___0FfUj)}
-                  displayHeight={"40px"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"none"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"auto"}
-                  src={"https://static1.plasmic.app/nav-logo-placeholder.svg"}
-                />
-              </a>
-            }
-            className={classNames("__wab_instance", sty.headerNavBar)}
-            closeButton={
+          <RichLayout
+            data-plasmic-name={"richAppLayout"}
+            data-plasmic-override={overrides.richAppLayout}
+            className={classNames("__wab_instance", sty.richAppLayout)}
+            logoElement={
               <PlasmicImg__
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img__wNy0K)}
+                className={classNames(sty.img)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"none"}
                 displayMinHeight={"0"}
                 displayMinWidth={"0"}
                 displayWidth={"auto"}
-                src={"https://static1.plasmic.app/close.svg"}
+                src={(() => {
+                  try {
+                    return "https://www.skullcandy.com/cdn/shop/files/skdylogosvg.svg?v=1710432982&width=150";
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "https://static1.plasmic.app/fake-logo.svg";
+                    }
+                    throw e;
+                  }
+                })()}
               />
             }
-            itemsGap={8}
-            menuItems={
-              <React.Fragment>
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__vu7P4
-                  )}
-                  href={"/"}
-                >
-                  {"Home"}
-                </a>
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__yzStM
-                  )}
-                  href={"/"}
-                >
-                  {"About"}
-                </a>
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__dq1B0
-                  )}
-                  href={"/"}
-                >
-                  {"Contact"}
-                </a>
-              </React.Fragment>
-            }
-            openButton={
-              <PlasmicImg__
-                alt={""}
-                className={classNames(sty.img__qgJbn)}
-                displayHeight={"auto"}
-                displayMaxHeight={"none"}
-                displayMaxWidth={"none"}
-                displayMinHeight={"0"}
-                displayMinWidth={"0"}
-                displayWidth={"auto"}
-                src={"https://static1.plasmic.app/menu.svg"}
-              />
-            }
-            responsiveBreakpoint={768}
+            navMenuItems={(() => {
+              const __composite = [
+                { path: "/", name: "Home" },
+                { path: null, name: null }
+              ];
+
+              __composite["1"]["path"] = `/products`;
+              __composite["1"]["name"] = "Products";
+              return __composite;
+            })()}
+            simpleNavTheme={(() => {
+              const __composite = { scheme: null };
+              __composite["scheme"] = "dark";
+              return __composite;
+            })()}
+            title={``}
           />
         </div>
       </div>
@@ -164,8 +121,9 @@ function PlasmicSkullcandy__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  landingPage: ["landingPage", "headerNavBar"],
-  headerNavBar: ["headerNavBar"]
+  landingPage: ["landingPage", "richAppLayout", "img"],
+  richAppLayout: ["richAppLayout", "img"],
+  img: ["img"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -198,7 +156,7 @@ function makeNodeComponent(nodeName) {
 function withPlasmicPageGuard(WrappedComponent) {
   const PageGuard = props => (
     <PlasmicPageGuard__
-      minRole={"88d785e0-6727-4e2b-b09c-548f4f839599"}
+      minRole={null}
       appId={"sMuK5QvKwWGrkw9DYJKXqS"}
       authorizeEndpoint={"https://studio.plasmic.app/authorize"}
       canTriggerLogin={true}
@@ -237,7 +195,8 @@ export const PlasmicSkullcandy = Object.assign(
   withUsePlasmicAuth(withPlasmicPageGuard(makeNodeComponent("landingPage"))),
   {
     // Helper components rendering sub-elements
-    headerNavBar: makeNodeComponent("headerNavBar"),
+    richAppLayout: makeNodeComponent("richAppLayout"),
+    img: makeNodeComponent("img"),
     // Metadata about props expected for PlasmicSkullcandy
     internalVariantProps: PlasmicSkullcandy__VariantProps,
     internalArgProps: PlasmicSkullcandy__ArgProps,

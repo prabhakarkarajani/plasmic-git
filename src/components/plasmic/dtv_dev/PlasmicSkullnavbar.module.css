@@ -1,0 +1,122 @@
+.root:global(.__wab_instance) {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 100%;
+  object-fit: cover;
+  background: #000000;
+  position: relative;
+  height: 71px;
+  padding: 16px;
+}
+.link__kwHiF {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0px;
+}
+.img___23EuI {
+  object-fit: cover;
+  height: 40px;
+  margin-left: 28px;
+  margin-bottom: 28px;
+}
+.img___23EuI > picture > img {
+  object-fit: cover;
+}
+.img___378NP {
+  object-fit: cover;
+}
+.img___378NP > picture > img {
+  object-fit: cover;
+}
+.img__oviV4 {
+  object-fit: cover;
+}
+.img__oviV4 > picture > img {
+  object-fit: cover;
+}
+.link__juq4T {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  margin-right: 40px;
+  margin-bottom: 28px;
+  color: var(--token-zy6xhYnWF8Y7);
+  font-weight: 700;
+  font-size: 18px;
+  font-family: "Archivo", sans-serif;
+}
+.link__i9DTt {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  margin-right: 46px;
+  margin-bottom: 28px;
+  color: var(--token-zy6xhYnWF8Y7);
+  font-weight: 700;
+  font-size: 18px;
+  font-family: "Archivo", sans-serif;
+}
+.link__dcgcQ {
+  margin-right: 52px;
+  padding-top: 0px;
+  margin-bottom: 31px;
+  color: var(--token-41VRhDKfihhY);
+  font-weight: 700;
+  font-size: 20px;
+  font-family: "Archivo", sans-serif;
+}
+.link__l0K4 {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  margin-right: 493px;
+  position: relative;
+  margin-bottom: 28px;
+  color: var(--token-zy6xhYnWF8Y7);
+  font-weight: 700;
+  font-size: 18px;
+  font-family: "Archivo", sans-serif;
+}
+.img___40ZoI {
+  object-fit: cover;
+  max-width: 100%;
+  width: 70px;
+  height: 51px;
+  margin-bottom: 0px;
+  position: absolute;
+  left: 1291px;
+  top: 8px;
+}
+.img___40ZoI > picture > img {
+  object-fit: cover;
+}
+.drawer:global(.__wab_instance):global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: auto;
+  opacity: 1;
+}
+.text {
+  color: #000000;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 40px;
+  margin-left: 0px;
+  margin-top: 3px;
+  text-align: center;
+}
+.productbagitems:global(.__wab_instance) {
+  position: relative;
+}

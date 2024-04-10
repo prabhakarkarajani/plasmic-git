@@ -30,8 +30,12 @@ import TextInput from "../../TextInput"; // plasmic-import: NGI8y2GcvmiY/compone
 import { AntdPassword } from "@plasmicpkgs/antd5/skinny/registerInput";
 import { inputHelpers as AntdPassword_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
 import Button from "../../Button"; // plasmic-import: Humveg51WdE0/component
+import { AntdDropdown } from "@plasmicpkgs/antd5/skinny/registerDropdown";
+import { AntdMenuItem } from "@plasmicpkgs/antd5/skinny/registerMenu";
+import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton";
 import "@plasmicapp/react-web/lib/plasmic.css";
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
+import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: sMuK5QvKwWGrkw9DYJKXqS/projectcss
 import sty from "./PlasmicSignin.module.css"; // plasmic-import: PJgWtRccDtfX/css
 
@@ -79,7 +83,6 @@ function PlasmicSignin__RenderFunc(props) {
     $queries: {},
     $refs
   });
-  const dataSourcesCtx = usePlasmicDataSourceContext();
   return (
     <React.Fragment>
       <div className={projectcss.plasmic_page_wrapper}>
@@ -95,6 +98,7 @@ function PlasmicSignin__RenderFunc(props) {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             plasmic_antd_5_hostless_css.plasmic_tokens,
+            plasmic_plasmic_rich_components_css.plasmic_tokens,
             sty.root
           )}
         >
@@ -153,24 +157,74 @@ function PlasmicSignin__RenderFunc(props) {
                 />
               );
             })()}
-            <Button
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames("__wab_instance", sty.button)}
-            >
+            <Button className={classNames("__wab_instance", sty.button__hbv12)}>
               <div
-                data-plasmic-name={"text"}
-                data-plasmic-override={overrides.text}
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text
+                  sty.text__d4QeX
                 )}
               >
                 {"SignIn"}
               </div>
             </Button>
           </div>
+          <AntdDropdown
+            data-plasmic-name={"dropdown"}
+            data-plasmic-override={overrides.dropdown}
+            className={classNames("__wab_instance", sty.dropdown)}
+            dropdownMenuScopeClassName={sty["dropdown__dropdownMenu"]}
+            menuItems={() => (
+              <React.Fragment>
+                <AntdMenuItem
+                  className={classNames("__wab_instance", sty.menuItem__wJxo3)}
+                  key={"menu-item-1"}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__vh4So
+                    )}
+                  >
+                    {"Menu item"}
+                  </div>
+                </AntdMenuItem>
+                <AntdMenuItem
+                  className={classNames("__wab_instance", sty.menuItem__hxLd2)}
+                  key={"menu-item-2"}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___2InC
+                    )}
+                  >
+                    {"Menu item"}
+                  </div>
+                </AntdMenuItem>
+              </React.Fragment>
+            )}
+            menuItemsJson={[
+              { type: "item", value: "action1", label: "Action 1" },
+              { type: "item", value: "action2", label: "Action 2" }
+            ]}
+          >
+            <AntdButton
+              className={classNames("__wab_instance", sty.button___34EC7)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___71Hzm
+                )}
+              >
+                {"Dropdown"}
+              </div>
+            </AntdButton>
+          </AntdDropdown>
         </div>
       </div>
     </React.Fragment>
@@ -178,12 +232,11 @@ function PlasmicSignin__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "textInput", "passwordInput", "button", "text"],
-  freeBox: ["freeBox", "textInput", "passwordInput", "button", "text"],
+  root: ["root", "freeBox", "textInput", "passwordInput", "dropdown"],
+  freeBox: ["freeBox", "textInput", "passwordInput"],
   textInput: ["textInput"],
   passwordInput: ["passwordInput"],
-  button: ["button", "text"],
-  text: ["text"]
+  dropdown: ["dropdown"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -216,7 +269,7 @@ function makeNodeComponent(nodeName) {
 function withPlasmicPageGuard(WrappedComponent) {
   const PageGuard = props => (
     <PlasmicPageGuard__
-      minRole={"88d785e0-6727-4e2b-b09c-548f4f839599"}
+      minRole={null}
       appId={"sMuK5QvKwWGrkw9DYJKXqS"}
       authorizeEndpoint={"https://studio.plasmic.app/authorize"}
       canTriggerLogin={true}
@@ -258,8 +311,7 @@ export const PlasmicSignin = Object.assign(
     freeBox: makeNodeComponent("freeBox"),
     textInput: makeNodeComponent("textInput"),
     passwordInput: makeNodeComponent("passwordInput"),
-    button: makeNodeComponent("button"),
-    text: makeNodeComponent("text"),
+    dropdown: makeNodeComponent("dropdown"),
     // Metadata about props expected for PlasmicSignin
     internalVariantProps: PlasmicSignin__VariantProps,
     internalArgProps: PlasmicSignin__ArgProps,

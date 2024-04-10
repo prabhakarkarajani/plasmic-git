@@ -17,6 +17,10 @@ import {
   createPlasmicElementProxy,
   deriveRenderOpts,
   ensureGlobalVariants,
+  generateOnMutateForSpec,
+  generateStateOnChangePropForCodeComponents,
+  generateStateValueProp,
+  initializeCodeComponentStates,
   set as $stateSet,
   useCurrentUser,
   useDollarState
@@ -33,9 +37,12 @@ import { DataFetcher } from "@plasmicpkgs/plasmic-query";
 import Button from "../../Button"; // plasmic-import: Humveg51WdE0/component
 import BBsportsFooter2 from "../../BBsportsFooter2"; // plasmic-import: DmzRb63NDqeE/component
 import Fotter from "../../Fotter"; // plasmic-import: m2U6ZOt1kBnV/component
+import { SliderWrapper } from "@plasmicpkgs/react-slick";
+import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
 import { useScreenVariants as useScreenVariantscVfb4YQ8QuPw } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: CVfb4yQ8quPw/globalVariant
 import "@plasmicapp/react-web/lib/plasmic.css";
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
+import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: sMuK5QvKwWGrkw9DYJKXqS/projectcss
 import sty from "./PlasmicBBsports1.module.css"; // plasmic-import: 02c6mnCcd3D_/css
 import blankImagepngMDaRb3Hx58Wy from "./images/blankImagepng.png"; // plasmic-import: mDaRB3hx58WY/picture
@@ -79,6 +86,14 @@ function PlasmicBBsports1__RenderFunc(props) {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "sliderCarousel.currentSlide",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0,
+        refName: "sliderCarousel",
+        onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers)
       }
     ],
 
@@ -108,6 +123,7 @@ function PlasmicBBsports1__RenderFunc(props) {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             plasmic_antd_5_hostless_css.plasmic_tokens,
+            plasmic_plasmic_rich_components_css.plasmic_tokens,
             sty.root
           )}
           onClick={async event => {
@@ -172,66 +188,73 @@ function PlasmicBBsports1__RenderFunc(props) {
             />
 
             <div className={classNames(projectcss.all, sty.freeBox__xkVZx)}>
-              <h1
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h1,
-                  projectcss.__wab_text,
-                  sty.h1__vbTi1
-                )}
-                onClick={async event => {
-                  const $steps = {};
-                  $steps["goToPage"] = true
-                    ? (() => {
-                        const actionArgs = {};
-                        return (({ destination }) => {
-                          if (
-                            typeof destination === "string" &&
-                            destination.startsWith("#")
-                          ) {
-                            document
-                              .getElementById(destination.substr(1))
-                              .scrollIntoView({ behavior: "smooth" });
-                          } else {
-                            location.assign(destination);
-                          }
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["goToPage"] != null &&
-                    typeof $steps["goToPage"] === "object" &&
-                    typeof $steps["goToPage"].then === "function"
-                  ) {
-                    $steps["goToPage"] = await $steps["goToPage"];
-                  }
-                }}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return (
-                        "Before you go " +
-                        $state.loggedInUser.name +
-                        " ,check out these offers."
-                      );
-                    } catch (e) {
+              {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))([
+                2, 3, 4
+              ]).map((__plasmic_item_0, __plasmic_idx_0) => {
+                const currentItem = __plasmic_item_0;
+                const currentIndex = __plasmic_idx_0;
+                return (
+                  <h1
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h1,
+                      projectcss.__wab_text,
+                      sty.h1__vbTi1
+                    )}
+                    key={currentIndex}
+                    onClick={async event => {
+                      const $steps = {};
+                      $steps["goToPage"] = true
+                        ? (() => {
+                            const actionArgs = {};
+                            return (({ destination }) => {
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                location.assign(destination);
+                              }
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
                       if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
+                        $steps["goToPage"] != null &&
+                        typeof $steps["goToPage"] === "object" &&
+                        typeof $steps["goToPage"].then === "function"
                       ) {
-                        return "Before you go TOMOO,check out these offers.";
+                        $steps["goToPage"] = await $steps["goToPage"];
                       }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </h1>
+                    }}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return (
+                            "Before you go " +
+                            $state.loggedInUser.name +
+                            " ,check out these offers."
+                          );
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "Before you go TOMOO,check out these offers.";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </h1>
+                );
+              })}
               <PlasmicImg__
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img)}
+                className={classNames(sty.img__my4Ib)}
                 displayHeight={"auto"}
                 displayMaxHeight={"none"}
                 displayMaxWidth={"100%"}
@@ -434,6 +457,97 @@ function PlasmicBBsports1__RenderFunc(props) {
               className={classNames("__wab_instance", sty.bBsportsFooter)}
             />
           </div>
+          <Button
+            data-plasmic-name={"button"}
+            data-plasmic-override={overrides.button}
+            className={classNames("__wab_instance", sty.button)}
+          />
+
+          {(() => {
+            const child$Props = {
+              beforeChange: generateStateOnChangePropForCodeComponents(
+                $state,
+                "currentSlide",
+                ["sliderCarousel", "currentSlide"],
+                SliderWrapper_Helpers
+              ),
+              className: classNames("__wab_instance", sty.sliderCarousel),
+              initialSlide: generateStateValueProp($state, [
+                "sliderCarousel",
+                "currentSlide"
+              ]),
+              ref: ref => {
+                $refs["sliderCarousel"] = ref;
+              },
+              sliderScopeClassName: sty["sliderCarousel__slider"]
+            };
+            initializeCodeComponentStates(
+              $state,
+              [
+                {
+                  name: "currentSlide",
+                  plasmicStateName: "sliderCarousel.currentSlide"
+                }
+              ],
+
+              [],
+              SliderWrapper_Helpers ?? {},
+              child$Props
+            );
+            return (
+              <SliderWrapper
+                data-plasmic-name={"sliderCarousel"}
+                data-plasmic-override={overrides.sliderCarousel}
+                {...child$Props}
+              >
+                <div className={classNames(projectcss.all, sty.freeBox__xh6Nk)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__c6EeV)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    src={
+                      "https://static1.plasmic.app/components/react-slick/slide1.png"
+                    }
+                  />
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__ac2KC)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__qyitx)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    src={
+                      "https://static1.plasmic.app/components/react-slick/slide2.png"
+                    }
+                  />
+                </div>
+                <div className={classNames(projectcss.all, sty.freeBox__nffQ)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__f6LFq)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    src={
+                      "https://static1.plasmic.app/components/react-slick/slide3.png"
+                    }
+                  />
+                </div>
+              </SliderWrapper>
+            );
+          })()}
         </div>
       </div>
     </React.Fragment>
@@ -444,21 +558,23 @@ const PlasmicDescendants = {
   root: [
     "root",
     "bbsportsNavbar",
-    "img",
     "link",
     "httpRestApiFetcher",
     "acceptoffer",
     "bBsportsFooter2",
-    "bBsportsFooter"
+    "bBsportsFooter",
+    "button",
+    "sliderCarousel"
   ],
 
   bbsportsNavbar: ["bbsportsNavbar"],
-  img: ["img"],
   link: ["link", "httpRestApiFetcher", "acceptoffer"],
   httpRestApiFetcher: ["httpRestApiFetcher", "acceptoffer"],
   acceptoffer: ["acceptoffer"],
   bBsportsFooter2: ["bBsportsFooter2"],
-  bBsportsFooter: ["bBsportsFooter"]
+  bBsportsFooter: ["bBsportsFooter"],
+  button: ["button"],
+  sliderCarousel: ["sliderCarousel"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -531,12 +647,13 @@ export const PlasmicBBsports1 = Object.assign(
   {
     // Helper components rendering sub-elements
     bbsportsNavbar: makeNodeComponent("bbsportsNavbar"),
-    img: makeNodeComponent("img"),
     link: makeNodeComponent("link"),
     httpRestApiFetcher: makeNodeComponent("httpRestApiFetcher"),
     acceptoffer: makeNodeComponent("acceptoffer"),
     bBsportsFooter2: makeNodeComponent("bBsportsFooter2"),
     bBsportsFooter: makeNodeComponent("bBsportsFooter"),
+    button: makeNodeComponent("button"),
+    sliderCarousel: makeNodeComponent("sliderCarousel"),
     // Metadata about props expected for PlasmicBBsports1
     internalVariantProps: PlasmicBBsports1__VariantProps,
     internalArgProps: PlasmicBBsports1__ArgProps,

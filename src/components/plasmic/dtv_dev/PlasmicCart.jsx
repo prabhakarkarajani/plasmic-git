@@ -21,13 +21,19 @@ import {
   useCurrentUser,
   useDollarState
 } from "@plasmicapp/react-web";
-import { useDataEnv } from "@plasmicapp/react-web/lib/host";
+import {
+  DataCtxReader as DataCtxReader__,
+  useDataEnv
+} from "@plasmicapp/react-web/lib/host";
 import * as plasmicAuth from "@plasmicapp/react-web/lib/auth";
 import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
 import CartComponent3 from "../../CartComponent3"; // plasmic-import: DmT0Nv4lo2K2/component
 import Button from "../../Button"; // plasmic-import: Humveg51WdE0/component
+import { CmsQueryRepeater } from "@plasmicpkgs/plasmic-cms";
+import { CmsRowField } from "@plasmicpkgs/plasmic-cms";
 import "@plasmicapp/react-web/lib/plasmic.css";
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
+import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: sMuK5QvKwWGrkw9DYJKXqS/projectcss
 import sty from "./PlasmicCart.module.css"; // plasmic-import: GyNHfM4sC7dg/css
 
@@ -98,6 +104,7 @@ function PlasmicCart__RenderFunc(props) {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             plasmic_antd_5_hostless_css.plasmic_tokens,
+            plasmic_plasmic_rich_components_css.plasmic_tokens,
             sty.root
           )}
         >
@@ -314,6 +321,110 @@ function PlasmicCart__RenderFunc(props) {
               </Button>
             </a>
           </div>
+          <div className={classNames(projectcss.all, sty.freeBox__cPje)}>
+            <CmsQueryRepeater
+              data-plasmic-name={"banner"}
+              data-plasmic-override={overrides.banner}
+              className={classNames("__wab_instance", sty.banner)}
+              desc={false}
+              emptyMessage={
+                <DataCtxReader__>
+                  {$ctx => (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__a7K1C
+                      )}
+                    >
+                      {"No matching published entries found."}
+                    </div>
+                  )}
+                </DataCtxReader__>
+              }
+              forceEmptyState={false}
+              forceLoadingState={false}
+              limit={0}
+              loadingMessage={
+                <DataCtxReader__>
+                  {$ctx => (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__wotm7
+                      )}
+                    >
+                      {"Loading..."}
+                    </div>
+                  )}
+                </DataCtxReader__>
+              }
+              noAutoRepeat={false}
+              noLayout={false}
+              useDraft={false}
+            >
+              <DataCtxReader__>
+                {$ctx => (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__m51Cd)}
+                  >
+                    <CmsRowField
+                      className={classNames(
+                        "__wab_instance",
+                        sty.cmsEntryField__nalVr
+                      )}
+                      field={"id"}
+                      themeResetClassName={classNames(
+                        projectcss.root_reset,
+                        projectcss.root_reset_tags,
+                        projectcss.plasmic_default_styles,
+                        projectcss.plasmic_mixins,
+                        projectcss.plasmic_tokens,
+                        plasmic_antd_5_hostless_css.plasmic_tokens,
+                        plasmic_plasmic_rich_components_css.plasmic_tokens
+                      )}
+                      usePlasmicTheme={false}
+                    />
+
+                    <CmsRowField
+                      className={classNames(
+                        "__wab_instance",
+                        sty.cmsEntryField___49La5
+                      )}
+                      field={"answer"}
+                      themeResetClassName={classNames(
+                        projectcss.root_reset,
+                        projectcss.root_reset_tags,
+                        projectcss.plasmic_default_styles,
+                        projectcss.plasmic_mixins,
+                        projectcss.plasmic_tokens,
+                        plasmic_antd_5_hostless_css.plasmic_tokens,
+                        plasmic_plasmic_rich_components_css.plasmic_tokens
+                      )}
+                    />
+
+                    <CmsRowField
+                      className={classNames(
+                        "__wab_instance",
+                        sty.cmsEntryField__txUi5
+                      )}
+                      themeResetClassName={classNames(
+                        projectcss.root_reset,
+                        projectcss.root_reset_tags,
+                        projectcss.plasmic_default_styles,
+                        projectcss.plasmic_mixins,
+                        projectcss.plasmic_tokens,
+                        plasmic_antd_5_hostless_css.plasmic_tokens,
+                        plasmic_plasmic_rich_components_css.plasmic_tokens
+                      )}
+                    />
+                  </div>
+                )}
+              </DataCtxReader__>
+            </CmsQueryRepeater>
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox___7Y1N3)} />
         </div>
       </div>
     </React.Fragment>
@@ -321,10 +432,11 @@ function PlasmicCart__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "cartComponent3", "img", "link"],
+  root: ["root", "cartComponent3", "img", "link", "banner"],
   cartComponent3: ["cartComponent3"],
   img: ["img"],
-  link: ["link"]
+  link: ["link"],
+  banner: ["banner"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -399,6 +511,7 @@ export const PlasmicCart = Object.assign(
     cartComponent3: makeNodeComponent("cartComponent3"),
     img: makeNodeComponent("img"),
     link: makeNodeComponent("link"),
+    banner: makeNodeComponent("banner"),
     // Metadata about props expected for PlasmicCart
     internalVariantProps: PlasmicCart__VariantProps,
     internalArgProps: PlasmicCart__ArgProps,

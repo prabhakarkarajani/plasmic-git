@@ -1,4 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Kalam%3Aital%2Cwght%400%2C400%3B0%2C700&family=Roboto+Serif%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Poppins%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&family=Archivo+Black%3Aital%2Cwght%400%2C400&family=Archivo%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&family=Kalam%3Aital%2Cwght%400%2C400%3B0%2C700&family=Roboto+Serif%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&family=Poppins%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&display=swap");
+
+.plasmic_tokens {
+  --token-FOIQMWtIoi9n: 1px;
+  --plasmic-token-unnamed-style-token: var(--token-FOIQMWtIoi9n);
+  --token-Pu6v6lQTGa3E: Roboto;
+  --plasmic-token-unnamed-style-token-2: var(--token-Pu6v6lQTGa3E);
+}
 
 .plasmic_tokens {
   --plsmc-standard-width: 800px;

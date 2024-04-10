@@ -109,13 +109,13 @@ export default function GlobalContextsProvider(props) {
           cmsCredentialsProviderProps &&
           "databaseId" in cmsCredentialsProviderProps
             ? cmsCredentialsProviderProps.databaseId
-            : undefined
+            : "v54x8vRWeUNYmEYJSgkobi"
         }
         databaseToken={
           cmsCredentialsProviderProps &&
           "databaseToken" in cmsCredentialsProviderProps
             ? cmsCredentialsProviderProps.databaseToken
-            : undefined
+            : "wd8LDOsL6RPDf0idUUHu5kLsv5KkOrHTRzQK98wj288O1XEuL4hBXJfms5Rja3fMkRP8fIydyO2tTo0AiQ"
         }
         host={
           cmsCredentialsProviderProps && "host" in cmsCredentialsProviderProps

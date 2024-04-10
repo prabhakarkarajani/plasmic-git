@@ -59,24 +59,12 @@
   margin-right: 0px;
   flex-shrink: 0;
 }
-.svg__jXdmN {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
-}
 .text__lfVwh {
   font-size: 12px;
   font-weight: 600;
   margin-bottom: 0px;
   color: var(--token-zy6xhYnWF8Y7);
   padding-left: 0px;
-}
-.svg___89TLd {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
 }
 .httpRestApiFetcher:global(.__wab_instance) {
   width: auto;
@@ -90,20 +78,8 @@
   width: 300px;
   margin-right: 34px;
 }
-.svg___2AU78 {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
-}
 .text__uua2C {
   padding-left: 0px;
   font-size: 12px;
   font-weight: 600;
-}
-.svg__hmjgb {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
 }

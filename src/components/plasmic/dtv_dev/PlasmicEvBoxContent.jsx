@@ -11,19 +11,42 @@
 import * as React from "react";
 import {
   PlasmicDataSourceContextProvider as PlasmicDataSourceContextProvider__,
+  PlasmicImg as PlasmicImg__,
   PlasmicPageGuard as PlasmicPageGuard__,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts,
-  useCurrentUser
+  generateOnMutateForSpec,
+  generateStateOnChangePropForCodeComponents,
+  generateStateValueProp,
+  initializeCodeComponentStates,
+  useCurrentUser,
+  useDollarState
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import * as plasmicAuth from "@plasmicapp/react-web/lib/auth";
 import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
+import Skullnavbar from "../../Skullnavbar"; // plasmic-import: 8kXWecR7xP8z/component
+import MeetTheTriple from "../../MeetTheTriple"; // plasmic-import: ly8A8hR8IqkD/component
+import Imagesecom from "../../Imagesecom"; // plasmic-import: zq2i0ICbKSqp/component
+import Productsapi from "../../Productsapi"; // plasmic-import: Rs2G9aLuydaK/component
+import Groupcheadings from "../../Groupcheadings"; // plasmic-import: t4t5iuuXtsDC/component
+import { Video } from "@plasmicpkgs/plasmic-basic-components";
+import { SliderWrapper } from "@plasmicpkgs/react-slick";
+import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
+import SkullcandyFooter from "../../SkullcandyFooter"; // plasmic-import: vsk85xXTIg3V/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
+import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: sMuK5QvKwWGrkw9DYJKXqS/projectcss
 import sty from "./PlasmicEvBoxContent.module.css"; // plasmic-import: jft_q_QOdIxS/css
+import group3791WebpSxZ0VwpDdAg5 from "./images/group3791Webp.webp"; // plasmic-import: SxZ0VwpDDAg5/picture
+import group3792WebpWeTg7A60J4 from "./images/group3792Webp.webp"; // plasmic-import: we_Tg7A60_j4/picture
+import hpCollectionsShopSpeakersStompC60603081C1A4C61Aa2477E0144B9D69WebpXfBcg4ScPkU from "./images/hpCollectionsShopSpeakersStompC60603081C1A4C61Aa2477E0144B9D69Webp.webp"; // plasmic-import: xfBCG4ScPk_u/picture
+import ttn1JpgWj3Pixs8XyZ from "./images/ttn1Jpg.jpg"; // plasmic-import: Wj3PIXS8XY-z/picture
+import ttNjpgFPt06BPegLk from "./images/ttNjpg.jpg"; // plasmic-import: FPt06bPeg_Lk/picture
+import ttn3JpgWKm90EbGYaJ from "./images/ttn3Jpg.jpg"; // plasmic-import: _wKm90ebGYaJ/picture
+import ttn4JpgJlXyWqOi2Iup from "./images/ttn4Jpg.jpg"; // plasmic-import: JlXyWqOi2iup/picture
 
 createPlasmicElementProxy;
 
@@ -44,6 +67,26 @@ function PlasmicEvBoxContent__RenderFunc(props) {
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
   const currentUser = useCurrentUser?.() || {};
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "sliderCarousel.currentSlide",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0,
+        refName: "sliderCarousel",
+        onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers)
+      }
+    ],
+
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
   return (
     <React.Fragment>
       <div className={projectcss.plasmic_page_wrapper}>
@@ -59,14 +102,160 @@ function PlasmicEvBoxContent__RenderFunc(props) {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             plasmic_antd_5_hostless_css.plasmic_tokens,
+            plasmic_plasmic_rich_components_css.plasmic_tokens,
             sty.root
           )}
         >
-          <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
-          >
+          <div className={classNames(projectcss.all, sty.freeBox__awORz)}>
+            <Skullnavbar
+              data-plasmic-name={"skullnavbar"}
+              data-plasmic-override={overrides.skullnavbar}
+              className={classNames("__wab_instance", sty.skullnavbar)}
+            />
+
+            <MeetTheTriple
+              data-plasmic-name={"meetTheTriple"}
+              data-plasmic-override={overrides.meetTheTriple}
+              className={classNames("__wab_instance", sty.meetTheTriple)}
+            />
+
+            <Imagesecom
+              data-plasmic-name={"imagesecom"}
+              data-plasmic-override={overrides.imagesecom}
+              className={classNames("__wab_instance", sty.imagesecom)}
+            />
+
+            <div className={classNames(projectcss.all, sty.freeBox__ssmpx)}>
+              <h2
+                data-plasmic-name={"h2"}
+                data-plasmic-override={overrides.h2}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h2,
+                  projectcss.__wab_text,
+                  sty.h2
+                )}
+              >
+                {"WHAT'S HOT"}
+              </h2>
+              <Productsapi
+                data-plasmic-name={"productsapi"}
+                data-plasmic-override={overrides.productsapi}
+                className={classNames("__wab_instance", sty.productsapi)}
+              />
+            </div>
+            <h1
+              className={classNames(
+                projectcss.all,
+                projectcss.h1,
+                projectcss.__wab_text,
+                sty.h1__i8KbS
+              )}
+            >
+              {"COLLECTIONS"}
+            </h1>
+            <div className={classNames(projectcss.all, sty.columns__jZGv)}>
+              <div className={classNames(projectcss.all, sty.column__x1RzQ)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__iSPpM)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: group3791WebpSxZ0VwpDdAg5,
+                    fullWidth: 465,
+                    fullHeight: 465,
+                    aspectRatio: undefined
+                  }}
+                />
+
+                <Groupcheadings
+                  className={classNames(
+                    "__wab_instance",
+                    sty.groupcheadings__rYdQw
+                  )}
+                />
+              </div>
+              <div className={classNames(projectcss.all, sty.column__juOww)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__xQaKf)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: group3792WebpWeTg7A60J4,
+                    fullWidth: 465,
+                    fullHeight: 465,
+                    aspectRatio: undefined
+                  }}
+                />
+
+                <Groupcheadings
+                  className={classNames(
+                    "__wab_instance",
+                    sty.groupcheadings__pvJe
+                  )}
+                />
+              </div>
+              <div className={classNames(projectcss.all, sty.column___3PpFr)}>
+                <PlasmicImg__
+                  alt={""}
+                  className={classNames(sty.img__jtCTi)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"auto"}
+                  loading={"lazy"}
+                  src={{
+                    src: hpCollectionsShopSpeakersStompC60603081C1A4C61Aa2477E0144B9D69WebpXfBcg4ScPkU,
+                    fullWidth: 688,
+                    fullHeight: 688,
+                    aspectRatio: undefined
+                  }}
+                />
+
+                <Groupcheadings
+                  className={classNames(
+                    "__wab_instance",
+                    sty.groupcheadings__tFxMw
+                  )}
+                />
+              </div>
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox___19Ulr)}>
+              <Video
+                data-plasmic-name={"htmlVideo"}
+                data-plasmic-override={overrides.htmlVideo}
+                autoPlay={true}
+                className={classNames("__wab_instance", sty.htmlVideo)}
+                controls={true}
+                src={
+                  "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+                }
+              />
+            </div>
+            <h1
+              className={classNames(
+                projectcss.all,
+                projectcss.h1,
+                projectcss.__wab_text,
+                sty.h1__vOEx
+              )}
+            >
+              {"JOIN THE COMMUNITY"}
+            </h1>
             <div
               data-plasmic-name={"text"}
               data-plasmic-override={overrides.text}
@@ -76,27 +265,264 @@ function PlasmicEvBoxContent__RenderFunc(props) {
                 sty.text
               )}
             >
-              <React.Fragment>
-                <React.Fragment>{"ev"}</React.Fragment>
-                {
-                  <span
-                    data-plasmic-name={"span"}
-                    data-plasmic-override={overrides.span}
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.span,
-                      projectcss.__wab_text,
-                      projectcss.plasmic_default__inline,
-                      sty.span
-                    )}
-                  >
-                    {"box"}
-                  </span>
-                }
-
-                <React.Fragment>{""}</React.Fragment>
-              </React.Fragment>
+              {"Follow us on social media and show us how you #skullcandy"}
             </div>
+            <div className={classNames(projectcss.all, sty.freeBox___8QyNz)}>
+              <div className={classNames(projectcss.all, sty.columns__pCgpq)}>
+                <div className={classNames(projectcss.all, sty.column___56VTr)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__bkKjB)}
+                    displayHeight={"437px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"437px"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"100%"}
+                    loading={"lazy"}
+                    src={{
+                      src: ttn1JpgWj3Pixs8XyZ,
+                      fullWidth: 1440,
+                      fullHeight: 1440,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+                <div className={classNames(projectcss.all, sty.column__mpZtS)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__xCveA)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: ttNjpgFPt06BPegLk,
+                      fullWidth: 1440,
+                      fullHeight: 1800,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+                <div className={classNames(projectcss.all, sty.column__ej7Qq)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__j7E9R)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: ttn3JpgWKm90EbGYaJ,
+                      fullWidth: 1440,
+                      fullHeight: 1800,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+                <div className={classNames(projectcss.all, sty.column__hnGeQ)}>
+                  <PlasmicImg__
+                    alt={""}
+                    className={classNames(sty.img__ep5K)}
+                    displayHeight={"auto"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"auto"}
+                    loading={"lazy"}
+                    src={{
+                      src: ttn4JpgJlXyWqOi2Iup,
+                      fullWidth: 1440,
+                      fullHeight: 1800,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </div>
+              </div>
+              {(() => {
+                const child$Props = {
+                  beforeChange: generateStateOnChangePropForCodeComponents(
+                    $state,
+                    "currentSlide",
+                    ["sliderCarousel", "currentSlide"],
+                    SliderWrapper_Helpers
+                  ),
+                  className: classNames("__wab_instance", sty.sliderCarousel),
+                  initialSlide: generateStateValueProp($state, [
+                    "sliderCarousel",
+                    "currentSlide"
+                  ]),
+                  ref: ref => {
+                    $refs["sliderCarousel"] = ref;
+                  },
+                  sliderScopeClassName: sty["sliderCarousel__slider"]
+                };
+                initializeCodeComponentStates(
+                  $state,
+                  [
+                    {
+                      name: "currentSlide",
+                      plasmicStateName: "sliderCarousel.currentSlide"
+                    }
+                  ],
+
+                  [],
+                  SliderWrapper_Helpers ?? {},
+                  child$Props
+                );
+                return (
+                  <SliderWrapper
+                    data-plasmic-name={"sliderCarousel"}
+                    data-plasmic-override={overrides.sliderCarousel}
+                    {...child$Props}
+                  >
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__kNqFw)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__pxdeB
+                        )}
+                      >
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__mNdy)}
+                          displayHeight={"437px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"437px"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"100%"}
+                          src={{
+                            src: ttn1JpgWj3Pixs8XyZ,
+                            fullWidth: 1440,
+                            fullHeight: 1440,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img___1EwT)}
+                          displayHeight={"437px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"437px"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"100%"}
+                          loading={"lazy"}
+                          src={{
+                            src: ttNjpgFPt06BPegLk,
+                            fullWidth: 1440,
+                            fullHeight: 1800,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__tj89X)}
+                          displayHeight={"437px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"auto"}
+                          loading={"lazy"}
+                          src={{
+                            src: ttn3JpgWKm90EbGYaJ,
+                            fullWidth: 1440,
+                            fullHeight: 1800,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__vYPpR)}
+                          displayHeight={"437px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"437px"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"100%"}
+                          src={{
+                            src: ttn4JpgJlXyWqOi2Iup,
+                            fullWidth: 1440,
+                            fullHeight: 1800,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__olBrn)}
+                          displayHeight={"437px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"437px"}
+                          loading={"lazy"}
+                          src={{
+                            src: ttNjpgFPt06BPegLk,
+                            fullWidth: 1440,
+                            fullHeight: 1800,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__e0Hmm)}
+                          displayHeight={"437px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"437px"}
+                          loading={"lazy"}
+                          src={{
+                            src: ttn1JpgWj3Pixs8XyZ,
+                            fullWidth: 1440,
+                            fullHeight: 1440,
+                            aspectRatio: undefined
+                          }}
+                        />
+
+                        <PlasmicImg__
+                          alt={""}
+                          className={classNames(sty.img__iroXr)}
+                          displayHeight={"431px"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"431px"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"100%"}
+                          loading={"lazy"}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__c4Uds)}
+                    />
+                  </SliderWrapper>
+                );
+              })()}
+            </div>
+            <SkullcandyFooter
+              data-plasmic-name={"skullcandyFooter"}
+              data-plasmic-override={overrides.skullcandyFooter}
+              className={classNames("__wab_instance", sty.skullcandyFooter)}
+            />
           </div>
         </div>
       </div>
@@ -105,10 +531,28 @@ function PlasmicEvBoxContent__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "text", "span"],
-  freeBox: ["freeBox", "text", "span"],
-  text: ["text", "span"],
-  span: ["span"]
+  root: [
+    "root",
+    "skullnavbar",
+    "meetTheTriple",
+    "imagesecom",
+    "h2",
+    "productsapi",
+    "htmlVideo",
+    "text",
+    "sliderCarousel",
+    "skullcandyFooter"
+  ],
+
+  skullnavbar: ["skullnavbar"],
+  meetTheTriple: ["meetTheTriple"],
+  imagesecom: ["imagesecom"],
+  h2: ["h2"],
+  productsapi: ["productsapi"],
+  htmlVideo: ["htmlVideo"],
+  text: ["text"],
+  sliderCarousel: ["sliderCarousel"],
+  skullcandyFooter: ["skullcandyFooter"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -180,9 +624,15 @@ export const PlasmicEvBoxContent = Object.assign(
   withUsePlasmicAuth(withPlasmicPageGuard(makeNodeComponent("root"))),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
+    skullnavbar: makeNodeComponent("skullnavbar"),
+    meetTheTriple: makeNodeComponent("meetTheTriple"),
+    imagesecom: makeNodeComponent("imagesecom"),
+    h2: makeNodeComponent("h2"),
+    productsapi: makeNodeComponent("productsapi"),
+    htmlVideo: makeNodeComponent("htmlVideo"),
     text: makeNodeComponent("text"),
-    span: makeNodeComponent("span"),
+    sliderCarousel: makeNodeComponent("sliderCarousel"),
+    skullcandyFooter: makeNodeComponent("skullcandyFooter"),
     // Metadata about props expected for PlasmicEvBoxContent
     internalVariantProps: PlasmicEvBoxContent__VariantProps,
     internalArgProps: PlasmicEvBoxContent__ArgProps,
